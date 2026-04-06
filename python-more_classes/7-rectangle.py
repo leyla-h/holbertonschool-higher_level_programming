@@ -57,10 +57,10 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
 
-        # Using str(self.print_symbol) to handle cases where symbol is a list/other type
+        # Using str(self.print_symbol) to handle various types
         row = str(self.print_symbol) * self.__width
-        rect_str = [row for _ in range(self.__height)]
-        return "\n".join(rect_str)
+        rect_rows = [row for _ in range(self.__height)]
+        return "\n".join(rect_rows)
 
     def __repr__(self):
         """Returns a string to recreate the instance using eval()"""
