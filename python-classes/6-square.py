@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module with a Square class including size and position"""
+"""Module that defines a Square with size and position validation"""
 
 
 class Square:
@@ -17,7 +17,7 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """Set the size with validation"""
+        """Set the size with integer validation"""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -29,10 +29,9 @@ class Square:
         """Retrieve the position"""
         return self.__position
 
-    @size.setter
     @position.setter
     def position(self, value):
-        """Set the position with validation"""
+        """Set the position with specific tuple validation"""
         if (not isinstance(value, tuple) or len(value) != 2 or
                 not all(isinstance(num, int) for num in value) or
                 not all(num >= 0 for num in value)):
@@ -44,16 +43,15 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """Prints the square with # and position offset"""
+        """Prints the square with # and uses position for offsets"""
         if self.__size == 0:
             print("")
             return
 
-        # Print vertical offset (newlines)
-        if self.__position[1] > 0:
-            for _ in range(self.__position[1]):
-                print("")
+        # Print vertical offset (new lines)
+        for _ in range(self.__position[1]):
+            print("")
 
-        # Print square rows with horizontal offset (spaces)
+        # Print the square rows with horizontal offset (spaces)
         for _ in range(self.__size):
             print(" " * self.__position[0] + "#" * self.__size)
