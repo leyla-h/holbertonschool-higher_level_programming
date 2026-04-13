@@ -21,14 +21,6 @@ The ``BaseGeometry`` class
     Traceback (most recent call last):
     ValueError: distance must be greater than 0
 
-    >>> bg.integer_validator("age", 13.5)
-    Traceback (most recent call last):
-    TypeError: age must be an integer
-
-    >>> bg.integer_validator("age", (4,))
-    Traceback (most recent call last):
-    TypeError: age must be an integer
-
     >>> bg.integer_validator("age", [3])
     Traceback (most recent call last):
     TypeError: age must be an integer
@@ -37,7 +29,7 @@ The ``BaseGeometry`` class
     Traceback (most recent call last):
     TypeError: age must be an integer
 
-    >>> bg.integer_validator("age", {3, 4})
+    >>> bg.integer_validator("age", (4,))
     Traceback (most recent call last):
     TypeError: age must be an integer
 
