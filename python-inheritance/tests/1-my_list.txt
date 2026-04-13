@@ -1,0 +1,36 @@
+=======================
+How to use 1-my_list.py
+=======================
+
+First, import the class:
+    >>> MyList = __import__('1-my_list').MyList
+
+Normal case:
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+Empty list:
+    >>> my_list2 = MyList()
+    >>> my_list2.print_sorted()
+    []
+
+List with negative numbers:
+    >>> my_list3 = MyList()
+    >>> my_list3.extend([10, -5, 0])
+    >>> my_list3.print_sorted()
+    [-5, 0, 10]
+
+String input (though the task says assume int, it's good practice):
+    >>> my_list4 = MyList(['b', 'c', 'a'])
+    >>> my_list4.print_sorted()
+    ['a', 'b', 'c']
