@@ -48,13 +48,13 @@ def cofactor(matrix):
             # Create submatrix by removing row i and column j
             sub_matrix = [row[:j] + row[j + 1:]
                           for row in (matrix[:i] + matrix[i + 1:])]
-            
+
             # Minor calculation
             min_val = determinant(sub_matrix)
-            
+
             # Apply cofactor sign: (-1)^(i+j)
             row_cofactors.append(min_val * ((-1) ** (i + j)))
-            
+
         cofactor_matrix.append(row_cofactors)
 
     return cofactor_matrix
